@@ -1,45 +1,59 @@
-# Building the Website with MkDocs for GitHub Pages
+# Development of a Design-Through-Analysis Isogeometric Module in FEAST: Towards Structural Analysis and Optimization
 
-## Quickstart
-- Create a new repository by using the specified repository as a template.
-	   ![](attachments/Pasted%20image%2020240120214240.png)
-- Navigate to the 'Settings' of your newly created repository, then proceed to the 'Pages' section. In the 'Branch' section, select 'main' and subsequently choose 'docs.' Confirm your selection by clicking 'Save'.
-	![](attachments/Pasted%20image%2020240120214354.png)
-- Proceed to the 'Actions' tab, then select 'General.' Under the 'Workflow Permissions' section, opt for the 'Read and write permissions' by selecting the corresponding radio button.
-	![](attachments/Pasted%20image%2020240120214426.png)
-- Your website will be accessible at the URL: www.yourgithubusername.github.io/repo-name.
-- Edit the content in the `write-here` folder and commit to Git Hub. The site will get automatically updated with each commit.
----
+## Deadline
+The project is supposed to start on: **August 1st week**.
+Internal submission deadline: **September 2024**.
+The project submission deadline: **January 2025**.
+## Description
+This project proposal aims to develop a design-through-analysis isogeometric module in FEAST for structural analysis and optimization. The work will focus on integrating Iso-Geometric Analysis (IGA) into ISRO's structural analysis software, FEAST, to improve accuracy, efficiency, and ease of use in structural engineering tasks.
 
-When using MkDocs to build a website, especially for hosting on GitHub Pages, it's important to understand the directory structure and how to configure the output correctly. This section explains the process and provides a command to automate the setup.
+## Background
+- **Finite Element Method (FEM):**
+  - Industry standard in Computer-Aided Engineering (CAE) for decades.
+  - Drawbacks: Effort-intensive CAD to FEM model conversion, limited C0 continuity, high computational effort for complex geometries.
+- **Iso-Geometric Analysis (IGA):**
+  - Extends and generalizes classical FEM using CAD-based spline polynomials (NURBS, T-splines, PHT-splines).
+  - Benefits: Reduced design-analysis communication time, exact geometry modeling, computational efficiency.
+  - Effective for plate/shell structures, vibration analysis, nonlinear contact mechanics, and structural optimization.
+## Project Objectives and Timelines
+### Major Objectives
 
-## Directory Structure
-- **Source Files:** By default, MkDocs uses a directory named `docs` for documentation source files.
-- **Build Output:** The generated static site files are usually placed in a directory named `site`.
+1. **GUI-Based Design-Through-Analysis Package for Isogeometric Analysis (IGA)**
+	- Develop a standalone software package to carry out IGA using single-patch and multi-patch NURBS.
+	- Enable the creation of geometries using NURBS and import NURBS data from other industry-standard CAD packages.
+	- Provide provisions for applying various boundary conditions.
+	- Implement isogeometric meshing of the analysis geometry.
 
-However, for GitHub Pages, there's a specific requirement:
-- **GitHub Pages Requirement:** GitHub Pages needs a `docs` folder at the repository's root to serve the website.
+2. **Static Analysis Module Using IGA**
+	- Develop a GUI package to perform static analysis of 2D and 3D structural geometries.
+	- Base the material model on linear-elastic behavior.
+	- Use plane stress and plane strain idealization.
+	- Add multi-patch conforming capabilities.
 
-To accommodate this, our MkDocs content is stored in a separate `write_here` folder, and we use a special command to restructure the output to meet GitHub Pages' requirements.
+3. **Eigenvalue Analysis Module Using IGA**
+	- Develop an eigenvalue analysis module to perform dynamic analysis of 2D geometries.
+	- Analyze the free vibration response of linear-elastic materials.
 
-### Automated Build Command
-The following command is designed to streamline the build process and ensure compatibility with GitHub Pages:
+4. **Validation of Developed Computer Codes**
+	- Generate test modules along with the codes for validation.
+	- Validate against a few standard benchmark problems.
 
-```bash
-rm -rf ../docs && mkdocs build && mv site ../docs
-```
+4. **Post-Processor for Visualizing IGA Results**
+	- Develop a module to project IGA results onto NURBS mesh for visualization.
+	- Create a module to display contour plots based on the stress resultants and other field variables.
 
-Here's what each part of the command does:
+## Deliverables
+- GUI module developed (static analysis + eigenvalue analysis)
+- Documentation of code and mathematical formulation
 
-1. `rm -rf ../docs`: Removes the existing `docs` directory at the parent path to clear any previous build outputs.
-2. `mkdocs build`: Builds the static site, outputting the files into the `site` directory.
-3. `mv site ../docs`: Moves the newly generated `site` directory to replace the deleted `docs` directory at the parent path.
+### Timeline - 
+- The project is divided into 5 Activities and corresponding sub activities.
+- Project completion is expected in 12 months.
 
-This process is crucial for GitHub Pages deployments, ensuring that the `docs` folder containing the site content is correctly placed at the repository's root. This setup is particularly useful when your Markdown documentation is maintained in a separate `write_here` folder.
 
-## Handling Images (Logo and Favicon)
-MkDocs expects certain assets like the logo and favicon to be located in a specific directory:
+![](attachments/Pasted%20image%2020240611185447.png)
 
-- **Location:** These files should be placed under the `img` folder within the `docs` directory.
 
-Ensure that your logo and favicon are correctly placed in this directory for MkDocs to reference them properly on your website.
+
+
+
