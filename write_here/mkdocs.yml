@@ -16,7 +16,7 @@ extra_css:
 theme:
   name: readthedocs
   highlightjs: true
-  logo: img/logo.svg
+  logo: img/isro_cmlab.svg
 
 plugins:
   - search
