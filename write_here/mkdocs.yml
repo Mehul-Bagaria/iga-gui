@@ -7,7 +7,7 @@ nav:
   - Chapter 2:
       - Introduction : 2_formulation/1_lesson.md
   - Tutorials:
-      - Introduction : 3_chapter/1_lesson.md
+      - Introduction : 3_tutorials/1_lesson.md
 
 copyright: Site developed and maintained by <a href="https://abhigupta.io">Abhinav Gupta</a>
 extra_css:
